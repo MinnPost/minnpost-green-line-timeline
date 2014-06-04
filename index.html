@@ -75,6 +75,9 @@ addthis_config = Drupal.settings.addthis.config_default; addthis_share = Drupal.
     For references, the classes are:
     node-body fieldlayout node-field-body
   -->
+  
+  <link rel="stylesheet" href="bower_components/jquery-vertical-timeline/dist/jquery-vertical-timeline.min.css">
+  
   <div class="node-body fieldlayout node-field-body">
 
     <!--
@@ -99,9 +102,16 @@ addthis_config = Drupal.settings.addthis.config_default; addthis_share = Drupal.
           </div>
         <![endif]-->
 
-        <div class="minnpost-green-line-timeline-container minnpost-full-container"></div>
+        <div class="minnpost-green-line-timeline-container minnpost-full-container">
+          <div class="timeline-jquery-greenline"></div>
+          
+          
+        </div>
       </div>
     </div>
+    
+    <script type="text/javascript" src="bower_components/jquery-vertical-timeline/dist/jquery-vertical-timeline.libs.js"></script>  
+    <script type="text/javascript" src="bower_components/jquery-vertical-timeline/dist/jquery-vertical-timeline.min.js"></script>
 
     <script type="text/javascript">
       //<![CDATA[
@@ -114,6 +124,12 @@ addthis_config = Drupal.settings.addthis.config_default; addthis_share = Drupal.
           document.write('<script src="https://s3.amazonaws.com/data.minnpost/projects/minnpost-green-line-timeline/minnpost-green-line-timeline.latest.min.js"><\/script>')
         }
       })();
+      
+        $('.timeline-jquery-greenline').verticalTimeline({
+            key: '1mw9b19ubv2iesoQiNyu36t4Pkeg3UGNqhkawe8-nBdA',
+            sheetName: 'greenline'
+          });
+      
       //]]>
     </script>
   </div>
