@@ -20,73 +20,74 @@
     "text": "~2.0.12",
     "underscore": "~1.6.0",
     "jquery": "~1.11.0",
-    "minnpost-styles": "master"
+    "minnpost-styles": "master",
+    "tabletop": "~1.3.5"
   },
   "dependencyMap": {
-  "requirejs": {
-    "rname": "requirejs",
-    "js": [
-      "requirejs/require"
-    ]
-  },
-  "almond": {
-    "rname": "almond",
-    "js": [
-      "almond/almond"
-    ]
-  },
-  "text": {
-    "rname": "text",
-    "js": [
-      "text/text"
-    ]
-  },
-  "jquery": {
-    "rname": "jquery",
-    "js": [
-      "jquery/dist/jquery"
-    ],
-    "returns": "$"
-  },
-  "underscore": {
-    "rname": "underscore",
-    "js": [
-      "underscore/underscore"
-    ],
-    "returns": "_"
-  },
-  "minnpost-styles": {
-    "rname": "mpStyles",
-    "css": [
-      "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css",
-      "minnpost-styles/dist/minnpost-styles"
-    ],
-    "sass": [
-      "minnpost-styles/styles/main"
-    ]
-  },
-  "mpConfig": {
-    "rname": "mpConfig",
-    "js": [
-      "minnpost-styles/dist/minnpost-styles.config"
-    ],
-    "returns": "mpConfig"
-  },
-  "mpFormatters": {
-    "rname": "mpFormatters",
-    "js": [
-      "minnpost-styles/dist/minnpost-styles.formatters"
-    ],
-    "returns": "mpFormatters"
-  },
-  "jquery-vertical-timeline": {
-   "rname": "jquery-vertical-timeline",
-   "js": [
-     "jquery-vertical-timeline/dist/jquery-vertical-timeline"
-   ],
-   "css": [
-     "jquery-vertical-timeline/dist/jquery-vertical-timeline"
-   ]
+    "requirejs": {
+      "rname": "requirejs",
+      "js": [
+        "requirejs/require"
+      ]
+    },
+    "almond": {
+      "rname": "almond",
+      "js": [
+        "almond/almond"
+      ]
+    },
+    "text": {
+      "rname": "text",
+      "js": [
+        "text/text"
+      ]
+    },
+    "jquery": {
+      "rname": "jquery",
+      "js": [
+        "jquery/dist/jquery"
+      ],
+      "returns": "$"
+    },
+    "underscore": {
+      "rname": "underscore",
+      "js": [
+        "underscore/underscore"
+      ],
+      "returns": "_"
+    },
+    "minnpost-styles": {
+      "rname": "mpStyles",
+      "css": [
+        "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css",
+        "minnpost-styles/dist/minnpost-styles"
+      ],
+      "sass": [
+        "minnpost-styles/styles/main"
+      ]
+    },
+    "mpConfig": {
+      "rname": "mpConfig",
+      "js": [
+        "minnpost-styles/dist/minnpost-styles.config"
+      ],
+      "returns": "mpConfig"
+    },
+    "mpFormatters": {
+      "rname": "mpFormatters",
+      "js": [
+        "minnpost-styles/dist/minnpost-styles.formatters"
+      ],
+      "returns": "mpFormatters"
+    },
+    "jquery-vertical-timeline": {
+      "rname": "jquery-vertical-timeline",
+      "js": [
+        "jquery-vertical-timeline/dist/jquery-vertical-timeline"
+      ],
+      "css": [
+        "jquery-vertical-timeline/dist/jquery-vertical-timeline"
+      ]
+    }
   }
-}
 }
