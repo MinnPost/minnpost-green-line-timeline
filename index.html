@@ -127,7 +127,10 @@ addthis_config = Drupal.settings.addthis.config_default; addthis_share = Drupal.
       
         $('.timeline-jquery-greenline').verticalTimeline({
             key: '1mw9b19ubv2iesoQiNyu36t4Pkeg3UGNqhkawe8-nBdA',
-            sheetName: 'greenline'
+            sheetName: 'greenline',
+            tabletopOptions: {
+               parameterize: 'http://gs-proxy.herokuapp.com/proxy?url='
+             }
           });
       
       //]]>

@@ -1,0 +1,22 @@
+/**
+ * Styles for: minnpost-green-line-timeline
+ */
+/**
+ * Variables for: minnpost-green-line-timeline
+ */
+/**
+ * Mixins for: minnpost-green-line-timeline
+ */
+/**
+ * Easily make cross brower inline block.
+ */
+/**
+ * Main styles for: minnpost-green-line-timeline
+ */
+body .node-unpublished {
+  background-repeat: no-repeat;
+}
+
+.mp .minnpost-green-line-timeline-container .application-container {
+  padding-top: 1em;
+}
