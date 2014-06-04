@@ -3,20 +3,14 @@
 
   <div class="content-container">
 
-    <h3>Minnpost Green Line Timeline</h3>
-
-    <div class="loading-block"></div>
-
     <div class="timeline-jquery-greenline"></div>
-
-    
 
   </div>
 
   <div class="footnote-container">
     <div class="footnote">
       <p>Some code, techniques, and data on <a href="https://github.com/minnpost/minnpost-green-line-timeline" target="_blank">Github</a>.</p>
-      
+
     </div>
   </div>
 </div>

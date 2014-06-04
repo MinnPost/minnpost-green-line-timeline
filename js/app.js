@@ -7,17 +7,13 @@
 
 // Create main application
 define('minnpost-green-line-timeline', [
-  'jquery', 'underscore', 'mpConfig', 'mpFormatters', 
+  'jquery', 'underscore', 'mpConfig', 'mpFormatters',
   'helpers', 'jquery-vertical-timeline',
-  
-  
   'text!templates/application.underscore',
   'text!templates/loading.underscore'
 ], function(
-  $, _, mpConfig, mpFormatters, 
+  $, _, mpConfig, mpFormatters,
   helpers, jqv,
-  
-  
   tApplication, tLoading
   ) {
 
@@ -27,7 +23,6 @@ define('minnpost-green-line-timeline', [
     this.el = this.options.el;
     this.$el = $(this.el);
     this.$ = function(selector) { return this.$el.find(selector); };
-    this.$content = this.$el.find('.content-container');
     this.loadApp();
   };
 
@@ -37,26 +32,19 @@ define('minnpost-green-line-timeline', [
     start: function() {
       var thisApp = this;
 
-      
       // Create main application view
-      this.$content.html(_.template(tApplication, {
-        data: {
-
-        },
-        loading: _.template(tLoading, {})
+      this.$el.html(_.template(tApplication, {
+        data: { }
       }));
-      
-      $('.timeline-jquery-greenline').verticalTimeline({
-           key: '1mw9b19ubv2iesoQiNyu36t4Pkeg3UGNqhkawe8-nBdA',
-           sheetName: 'greenline',
-           tabletopOptions: {
-              parameterize: 'http://gs-proxy.herokuapp.com/proxy?url='
-            }
-         });
-      
-    },
 
-    
+      this.$('.timeline-jquery-greenline').verticalTimeline({
+        key: '1mw9b19ubv2iesoQiNyu36t4Pkeg3UGNqhkawe8-nBdA',
+        sheetName: 'greenline',
+        tabletopOptions: {
+          parameterize: 'http://gs-proxy.herokuapp.com/proxy?url='
+        }
+      });
+    },
 
     // Default options
     defaultOptions: {
@@ -65,7 +53,7 @@ define('minnpost-green-line-timeline', [
       el: '.minnpost-green-line-timeline-container',
       availablePaths: {
         local: {
-          
+
           css: ['.tmp/css/main.css'],
           images: 'images/',
           data: 'data/'
