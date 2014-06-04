@@ -8,14 +8,14 @@
 // Create main application
 define('minnpost-green-line-timeline', [
   'jquery', 'underscore', 'mpConfig', 'mpFormatters', 
-  'helpers',
+  'helpers', 'jquery-vertical-timeline',
   
   
   'text!templates/application.underscore',
   'text!templates/loading.underscore'
 ], function(
   $, _, mpConfig, mpFormatters, 
-  helpers,
+  helpers, jqv,
   
   
   tApplication, tLoading
