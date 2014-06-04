@@ -12837,7 +12837,7 @@ define('text',['module'], function (module) {
 });
 
 
-define('text!templates/application.underscore',[],function () { return '<div class="application-container">\n  <div class="message-container"></div>\n\n  <div class="content-container">\n\n    <h3>Minnpost Green Line Timeline</h3>\n\n    <div class="loading-block"></div>\n\n    <p>Welcome to your new MinnPost application, built from the MinnPost Templating system.  Make sure to use the <a href="http://code.minnpost.com/minnpost-styles/">MinnPost Style Guide</a> for all your styling needs.</p>\n\n    \n\n  </div>\n\n  <div class="footnote-container">\n    <div class="footnote">\n      <p>Some code, techniques, and data on <a href="https://github.com/minnpost/minnpost-green-line-timeline" target="_blank">Github</a>.</p>\n      \n    </div>\n  </div>\n</div>\n';});
+define('text!templates/application.underscore',[],function () { return '<div class="application-container">\n  <div class="message-container"></div>\n\n  <div class="content-container">\n\n    <h3>Minnpost Green Line Timeline</h3>\n\n    <div class="loading-block"></div>\n\n    <div class="timeline-jquery-greenline"></div>\n\n    \n\n  </div>\n\n  <div class="footnote-container">\n    <div class="footnote">\n      <p>Some code, techniques, and data on <a href="https://github.com/minnpost/minnpost-green-line-timeline" target="_blank">Github</a>.</p>\n      \n    </div>\n  </div>\n</div>\n';});
 
 
 define('text!templates/loading.underscore',[],function () { return '<div class="loading-container">\n  <div class="loading"><span>Loading...</span></div>\n</div>';});
@@ -12890,7 +12890,13 @@ define('minnpost-green-line-timeline', [
         loading: _.template(tLoading, {})
       }));
       
-
+      $('.timeline-jquery-greenline').verticalTimeline({
+           key: '1mw9b19ubv2iesoQiNyu36t4Pkeg3UGNqhkawe8-nBdA',
+           sheetName: 'greenline',
+           tabletopOptions: {
+              parameterize: 'http://gs-proxy.herokuapp.com/proxy?url='
+            }
+         });
       
     },
 

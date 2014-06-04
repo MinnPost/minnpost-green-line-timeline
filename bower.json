@@ -78,6 +78,15 @@
       "minnpost-styles/dist/minnpost-styles.formatters"
     ],
     "returns": "mpFormatters"
+  },
+  "jquery-vertical-timeline": {
+   "rname": "jquery-vertical-timeline",
+   "js": [
+     "jquery-vertical-timeline/dist/jquery-vertical-timeline"
+   ],
+   "css": [
+     "jquery-vertical-timeline/dist/jquery-vertical-timeline"
+   ]
   }
 }
 }

@@ -46,7 +46,13 @@ define('minnpost-green-line-timeline', [
         loading: _.template(tLoading, {})
       }));
       
-
+      $('.timeline-jquery-greenline').verticalTimeline({
+           key: '1mw9b19ubv2iesoQiNyu36t4Pkeg3UGNqhkawe8-nBdA',
+           sheetName: 'greenline',
+           tabletopOptions: {
+              parameterize: 'http://gs-proxy.herokuapp.com/proxy?url='
+            }
+         });
       
     },
 
