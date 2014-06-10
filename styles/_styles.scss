@@ -16,6 +16,29 @@ body .node-unpublished {
   
   .loading {display: none;}
   
+  .vertical-timeline-buttons {
+    text-align: center;
+    margin: 20px 0 10px 0;
+
+    div {
+      @include inline-block();
+    }
+    
+    a {
+      @include inline-block();
+      width: 150px;
+      border: 1px #adadad solid;
+      @include border-radius(2px);
+      font-size: 12px;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 12px;
+      background-color: #FFF;
+      color: #3b3b3b;
+      text-transform: uppercase;
+    }
+  }
+  
   .date {
       color: #6a6a6a;
       font-size: 11px;
