@@ -42,7 +42,9 @@ define('minnpost-green-line-timeline', [
         sheetName: 'greenline',
         tabletopOptions: {
           parameterize: 'http://gs-proxy.herokuapp.com/proxy?url='
-        }
+        },
+        defaultDirection: 'oldest',
+        groupFunction: 'groupSegmentByDecade'
       });
     },
 
