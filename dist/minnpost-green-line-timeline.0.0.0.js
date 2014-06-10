@@ -115,7 +115,7 @@ define('helpers', ['jquery', 'underscore'],
 });
 
 
-define('text!templates/application.underscore',[],function () { return '<div class="application-container">\n  <div class="message-container"></div>\n\n  <div class="content-container">\n\n    <h3>Minnpost Green Line Timeline</h3>\n\n    <div class="loading-block"></div>\n\n    <div class="timeline-jquery-greenline"></div>\n\n    \n\n  </div>\n\n  <div class="footnote-container">\n    <div class="footnote">\n      <p>Some code, techniques, and data on <a href="https://github.com/minnpost/minnpost-green-line-timeline" target="_blank">Github</a>.</p>\n      \n    </div>\n  </div>\n</div>\n';});
+define('text!templates/application.underscore',[],function () { return '<div class="application-container">\n  <div class="message-container"></div>\n\n  <div class="content-container">\n\n    <div class="timeline-jquery-greenline"></div>\n\n  </div>\n\n  <div class="footnote-container">\n    <div class="footnote">\n      <p>Some code, techniques, and data on <a href="https://github.com/minnpost/minnpost-green-line-timeline" target="_blank">Github</a>.</p>\n\n    </div>\n  </div>\n</div>\n';});
 
 
 define('text!templates/loading.underscore',[],function () { return '<div class="loading-container">\n  <div class="loading"><span>Loading...</span></div>\n</div>';});
@@ -129,17 +129,13 @@ define('text!templates/loading.underscore',[],function () { return '<div class="
 
 // Create main application
 define('minnpost-green-line-timeline', [
-  'jquery', 'underscore', 'mpConfig', 'mpFormatters', 
-  'helpers',
-  
-  
+  'jquery', 'underscore', 'mpConfig', 'mpFormatters',
+  'helpers', 'jquery-vertical-timeline',
   'text!templates/application.underscore',
   'text!templates/loading.underscore'
 ], function(
-  $, _, mpConfig, mpFormatters, 
-  helpers,
-  
-  
+  $, _, mpConfig, mpFormatters,
+  helpers, jqv,
   tApplication, tLoading
   ) {
 
@@ -149,7 +145,6 @@ define('minnpost-green-line-timeline', [
     this.el = this.options.el;
     this.$el = $(this.el);
     this.$ = function(selector) { return this.$el.find(selector); };
-    this.$content = this.$el.find('.content-container');
     this.loadApp();
   };
 
@@ -159,26 +154,21 @@ define('minnpost-green-line-timeline', [
     start: function() {
       var thisApp = this;
 
-      
       // Create main application view
-      this.$content.html(_.template(tApplication, {
-        data: {
-
-        },
-        loading: _.template(tLoading, {})
+      this.$el.html(_.template(tApplication, {
+        data: { }
       }));
-      
-      $('.timeline-jquery-greenline').verticalTimeline({
-           key: '1mw9b19ubv2iesoQiNyu36t4Pkeg3UGNqhkawe8-nBdA',
-           sheetName: 'greenline',
-           tabletopOptions: {
-              parameterize: 'http://gs-proxy.herokuapp.com/proxy?url='
-            }
-         });
-      
-    },
 
-    
+      this.$('.timeline-jquery-greenline').verticalTimeline({
+        key: '1mw9b19ubv2iesoQiNyu36t4Pkeg3UGNqhkawe8-nBdA',
+        sheetName: 'greenline',
+        tabletopOptions: {
+          parameterize: 'http://gs-proxy.herokuapp.com/proxy?url='
+        },
+        defaultDirection: 'oldest',
+        groupFunction: 'groupSegmentByDecade'
+      });
+    },
 
     // Default options
     defaultOptions: {
@@ -187,7 +177,7 @@ define('minnpost-green-line-timeline', [
       el: '.minnpost-green-line-timeline-container',
       availablePaths: {
         local: {
-          
+
           css: ['.tmp/css/main.css'],
           images: 'images/',
           data: 'data/'
