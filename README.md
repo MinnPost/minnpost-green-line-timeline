@@ -8,7 +8,7 @@ You can see this project in action at [A timeline of the Green Line](http://www.
 
 ## Data
 
-Data for the timeline was gathered by reporter Joe Kimball. The data is stored in a Google Spreadsheet.
+Data for the timeline was gathered by reporter Joe Kimball. The data is stored in a [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1mw9b19ubv2iesoQiNyu36t4Pkeg3UGNqhkawe8-nBdA/pubhtml).
 
 ## Development and running locally
 
