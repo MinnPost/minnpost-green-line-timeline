@@ -69,10 +69,10 @@ body .node-unpublished {
   line-height: 20px;
 }
 .mp .minnpost-green-line-timeline-container.left .date {
-  background: transparent url('images/tab-left.png?1402431526') no-repeat right;
+  background: transparent url('images/tab-left.png?1402451343') no-repeat right;
   right: -54px;
 }
 .mp .minnpost-green-line-timeline-container.right .date {
-  background: transparent url('images/tab-right.png?1402431532') no-repeat left;
+  background: transparent url('images/tab-right.png?1402451343') no-repeat left;
   left: -54px;
 }

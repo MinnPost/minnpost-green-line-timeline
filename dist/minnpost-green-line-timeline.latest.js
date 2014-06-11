@@ -130,12 +130,12 @@ define('text!templates/loading.underscore',[],function () { return '<div class="
 // Create main application
 define('minnpost-green-line-timeline', [
   'jquery', 'underscore', 'mpConfig', 'mpFormatters',
-  'helpers', 'jquery-vertical-timeline',
+  'helpers', 'moment', 'jquery-vertical-timeline',
   'text!templates/application.underscore',
   'text!templates/loading.underscore'
 ], function(
   $, _, mpConfig, mpFormatters,
-  helpers, jqv,
+  helpers, moment, jqv,
   tApplication, tLoading
   ) {
 
@@ -159,14 +159,39 @@ define('minnpost-green-line-timeline', [
         data: { }
       }));
 
+      // Custom group function as byDecade doesn't seem to work right
+      // for oldest first
+      var groupSegmentByDecade = function(row, groups, direction) {
+        var year = row.date.year();
+        var yearStr = year.toString();
+        var id = yearStr.slice(0, -1);
+        var start = moment(id + '0-01-01T00:00:00');
+        var end = moment(id + '9-12-31T12:59:99');
+
+        if (_.isUndefined(groups[id])) {
+          groups[id] = {
+            id: id,
+            groupDisplay: id + '0s',
+            timestamp: (direction == 'newest') ? end.unix() : start.unix(),
+            timestampStart: start.unix(),
+            timestampEnd: end.unix() - 2000
+          };
+        }
+        return groups;
+      };
+
+      // Create timeline
       this.$('.timeline-jquery-greenline').verticalTimeline({
         key: '1mw9b19ubv2iesoQiNyu36t4Pkeg3UGNqhkawe8-nBdA',
         sheetName: 'greenline',
         tabletopOptions: {
-          parameterize: 'http://gs-proxy.herokuapp.com/proxy?url='
+          // Parameterize doesn't work anymore because Tabletop
+          // tries to look at CORS and ignores paramterize option
+          // if find CORS.  :(
+          parameterize: '//gs-proxy.herokuapp.com/proxy?url='
         },
         defaultDirection: 'oldest',
-        groupFunction: 'groupSegmentByDecade'
+        groupFunction: groupSegmentByDecade
       });
     },
 
