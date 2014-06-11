@@ -2,21 +2,13 @@
 
 A timeline of the events leading up to the opening of Metro Transit's Green Line
 
-You can see this project in action at *published story link goes here*.
+You can see this project in action at [A timeline of the Green Line](http://www.minnpost.com/politics-policy/2014/06/timeline-green-line)
 
 *Unless otherwise noted, MinnPost projects on [Github](https://github.com/minnpost) are story-driven and meant for transparency sake and not focused on re-use.  For a list of our more reusable projects, go to [code.minnpost.com](http://code.minnpost.com).*
 
 ## Data
 
-*Describe the data sources here.  Use links and URLs to show where the data came from.  Put small sized originals or modified data sources in the ```data``` folder*
-
-*For larger data sources that may need to be processed, provide instructions on how to download.  For instance:  ```cd data && wget blah.txt```.  Also, make sure to put an entry in the ```.gitignore```.*
-
-## Data processing
-
-The following describes how the data was processed and is not necessarily needed to run or install the application, but more included for reference, transparency, and development.
-
-*Describe data processing here, include commands, or document any manual steps taken.  Put data processing scripts or configurations in the ```data-processing``` folder.*
+Data for the timeline was gathered by reporter Joe Kimball. The data is stored in a Google Spreadsheet.
 
 ## Development and running locally
 
@@ -63,9 +55,9 @@ Get the code for this project and install the necessary dependency libraries and
 
 ### Developing
 
-Development will depend on what libraries are used.  But here are a few common parts.
+This timeline uses [jquery-vertical-timeline](https://github.com/MinnPost/jquery-vertical-timeline).
 
-* `js/app.js` is the main application and will contain the top logic.
+* `js/app.js` is the main application and contains the top logic.
 
 Adding libraries is not difficult, but there are a few steps.
 
@@ -91,11 +83,6 @@ Adding libraries is not difficult, but there are a few steps.
 }
 ```
 
-
-### Testing
-
-Unfortunately there are no tests at the moment.
-
 ### Build
 
 To build or compile all the assets together for easy and efficient deployment, do the following.  It will create all the files in the `dist/` folder.
@@ -114,10 +101,6 @@ There are to main ways to include the necessary HTML in a page in order to run t
 1. Copy the relevant parts from `index.html`.
     * This has the benefit of showing messages to users that have older browsers or have Javascript turned off.  This also uses the build that separates out the third-party libraries that are used and are less likely to change; this gains a bit of performance for users.
 1. Copy the embed output from `grunt deploy`.
-
-## Hacks
-
-*List any hacks used in this project, such as forked repos.  Link to pull request or repo and issue.*
 
 ## About Us
 
